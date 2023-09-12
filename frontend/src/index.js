@@ -4,12 +4,12 @@ import Main from "./pages/Main/Main";
 import Login from "./components/Login/Login";
 import Registration from "./components/Registration/Registration";
 import "./assets/style.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import NewReport from "./pages/Main/NewReport/Newreport";
 import Contact from "./components/Contact/Contact";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import { LanguageProvider } from "./hooks/LanguageProvider";
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: (
