@@ -1,7 +1,7 @@
 {
   "name": "openit",
   "version": "0.1.0",
-  "homepage": "https://danbrazhnyk.github.io/react_project",
+  "homepage": "https://danbrazhnyk.github.io/openit",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
