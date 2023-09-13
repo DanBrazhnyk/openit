@@ -28,5 +28,17 @@ router.get("/roles", (req, res) => {
     }
   });
 });
+router.get("/getRole", (req, res) => {
+  const getRoleQuery = "SELECT name FROM roles WHERE id = ?";
+  const { id } = req.query; 
+  db.query(getRoleQuery, [id], (err, results) => {
+    if (err) {
+      console.error("Error fetching reports:", err);
+      res.status(500).json({ error: "Error fetching reports" });
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
 
 export default router;

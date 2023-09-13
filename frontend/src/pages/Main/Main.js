@@ -8,15 +8,20 @@ import { motion } from "framer-motion";
 import Footer from "../../components/Footer/Footer";
 import { useLanguage } from "../../hooks/LanguageProvider";
 import { translations } from "../../constants/translate";
+
+
 const Main = () => {
   const [userRole, setUserRole] = useState("viewer");
   const { currentLanguage, changeLanguage } = useLanguage();
+
+
   useEffect(() => {
     const storedUserRole = localStorage.getItem("userRole");
     if (storedUserRole) {
       setUserRole(storedUserRole);
     }
   }, []);
+
   const handleLogout = () => {
     localStorage.removeItem("userRole");
     localStorage.removeItem("userEmail");
@@ -184,6 +189,7 @@ const Main = () => {
                 {translations[currentLanguage].contact}
               </Link>
             </motion.li>
+           
             <li>
               <Search>
                 <SearchIconWrapper>
@@ -194,6 +200,9 @@ const Main = () => {
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
+            </li>
+             <li>
+            <p>{translations[currentLanguage].roles[userRole]}</p>
             </li>
             <li>
               {userRole !== "viewer" && (
