@@ -23,7 +23,7 @@ const router = createHashRouter([
         element: <NewReport />,
       },
       {
-        path: "/Contact",
+        path: "/",
         element: <Contact />,
       },
     ],

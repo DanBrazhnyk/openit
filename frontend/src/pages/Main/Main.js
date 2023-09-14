@@ -83,6 +83,7 @@ const Main = () => {
               }}
             />
           </Link>
+          <p style={{marginLeft:"75%",marginTop:"-60px",marginBottom:"72px",fontSize: "22px", fontWeight: "bold",color:"#163a7d"}}>{currentLanguage==="en"?"Your role:":"Twoja rola:"}{" "}{translations[currentLanguage].roles[userRole]}</p>
           <ul
             style={{
               display: "flex",
@@ -175,7 +176,7 @@ const Main = () => {
 
             <motion.li whileHover={{ borderBottom: "3px solid #98989C" }}>
               <Link
-                to="/Contact"
+                to="/"
                 style={{
                   color: "#98989C",
                   fontWeight: "bold",
@@ -201,9 +202,7 @@ const Main = () => {
                 />
               </Search>
             </li>
-             <li>
-            <p>{translations[currentLanguage].roles[userRole]}</p>
-            </li>
+            
             <li>
               {userRole !== "viewer" && (
                 <Link to="/login">

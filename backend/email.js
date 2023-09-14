@@ -70,4 +70,21 @@ router.post("/email", upload.single("file"), (req, res) => {
   });
 });
 
+router.get("/getEmails", (req, res) => {
+  const selectQuery = "SELECT * FROM message";
+
+  db.query(selectQuery, (err, results) => {
+    if (err) {
+      console.error("Error fetching email data from MySQL:", err);
+      res
+        .status(500)
+        .json({ error: "Error fetching email data", details: err.message });
+    } else {
+      console.log("Fetched email data from MySQL:", results);
+      res.status(200).json(results);
+    }
+  });
+});
+
+
 export default router;
